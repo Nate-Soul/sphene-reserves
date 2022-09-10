@@ -1,0 +1,15 @@
+.option-counter-btn:disabled{
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 452.98px) {
+    .rdrMonth{
+        width: 100% !important;
+    }   
+}
+
+@media screen and (max-width: 339.98px) {
+    .rdrMonthAndYearWrapper{
+        flex-direction: column;
+    }
+}
