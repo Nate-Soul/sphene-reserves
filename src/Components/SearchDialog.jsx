@@ -47,7 +47,7 @@ const SearchDialog = () => {
     };
   return (
     <div className="flex flex-col md:flex-row justify-evenly items-center gap-6 basis-full">
-        <div className="hero-search-item gap-3 flex items-center basis-full md:basis-auto">
+        <div className="hero-search-item gap-3 flex items-center justify-center basis-full md:basis-auto">
             <FaBed className="text-gray-500 text-md" />
             <input
             type="text"
@@ -82,11 +82,11 @@ const SearchDialog = () => {
             >{`${options.adults} Adult(s) ${options.children} Child(ren) ${options.rooms} Room(s)`}</span>
             {openOptions && (
             <div className="options absolute top-8 md:top-14 bg-white rounded-md shadow left-0 p-3 text-gray-400 z-40 w-full xs:w-64">
-                <div className="options-item flex justify-between my-2">
+                <div className="options-item flex flex-col xs:flex-row justify-between my-2">
                 <span className="option-text">Adult(s)</span>
-                <div className="option-counter flex gap-3 justify-center text-sm text-black">
+                <div className="option-counter flex gap-3 justify-center items-center text-sm text-black">
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("adults", "d")}
                     disabled={options.adults <= 1}
                     >
@@ -96,18 +96,18 @@ const SearchDialog = () => {
                     {options.adults}
                     </span>
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("adults", "i")}
                     >
                     +
                     </button>
                 </div>
                 </div>
-                <div className="options-item flex justify-between my-2">
+                <div className="options-item flex flex-col xs:flex-row justify-between my-2">
                 <span className="option-text">Child(ren)</span>
-                <div className="option-counter flex gap-3 justify-center text-sm text-black">
+                <div className="option-counter flex gap-3 justify-center items-center text-sm text-black">
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("children", "d ")}
                     disabled={options.children <= 0}
                     >
@@ -117,18 +117,18 @@ const SearchDialog = () => {
                     {options.children}
                     </span>
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("children", "i")}
                     >
                     +
                     </button>
                 </div>
                 </div>
-                <div className="options-item flex justify-between my-2">
+                <div className="options-item flex flex-col xs:flex-row justify-between my-2">
                 <span className="option-text">Room(s)</span>
-                <div className="option-counter flex gap-3 justify-center text-sm text-black">
+                <div className="option-counter flex gap-3 justify-center items-center text-sm text-black">
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("rooms", "d")}
                     disabled={options.rooms <= 1}
                     >
@@ -138,7 +138,7 @@ const SearchDialog = () => {
                     {options.rooms}
                     </span>
                     <button
-                    className="option-counter-btn w-6 h-6 border border-blue-200 bg-white hover:bg-blue-200"
+                    className="option-counter-btn py-2 px-3 border border-primary-200 bg-white hover:bg-primary-200 hover:text-white"
                     onClick={() => handleOption("rooms", "i")}
                     >
                     +
@@ -150,7 +150,7 @@ const SearchDialog = () => {
         </div>
         <div className="hero-search-item">
             <button
-            className="inline-flex search-btn bg-primary text-white capitalize text-sm p-3 rounded-lg hover:bg-primary-700"
+            className="block md:inline-flex search-btn bg-primary text-white capitalize text-sm p-3 rounded-lg hover:bg-primary-700"
             onClick={handleSearch}
             >
             <FaSearch />

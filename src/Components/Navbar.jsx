@@ -24,19 +24,19 @@ const Navbar = () => {
     <>
     <nav id="mainMenu" className="bg-secondary py-4">
       <div className="container flex flex-wrap items-center justify-between">
-        <Link to="/" className="navbar-brand text-primary font-bold">
+        <Link to="/" className="navbar-brand text-primary font-bold flex items-center">
           Sphene Reserves
         </Link>
-        <div className="navbar-togglers flex justify-between gap-6 items-center justify-self-end md:hidden text-primary">
+        <div id="navbarTogglers" className="flex justify-between gap-6 items-center text-primary text-lg md:hidden">
           <button onClick={toggleSearchDialog} className="hover:text-primary-700">
             <FaSearch/>
           </button>
-          {closeMenu && (
+          {openMenu && (
             <button onClick={handleToggle} className="hover:text-primary-700">
               <FaBars />
             </button>
           )}
-          {openMenu && (
+          {closeMenu && (
             <button onClick={handleToggle} className="hover:text-primary-700">
               <FaTimes />
             </button>
@@ -45,40 +45,40 @@ const Navbar = () => {
         <div
           id="mainMobileMenu"
           className={`${
-            closeMenu ? "hidden " : ""
-          }md:flex basis-full md:basis-auto mt-4 md:mt-0 grow-1`}
+            !closeMenu ? "hidden " : ""
+          }md:flex w-full md:w-auto md:order-1 items-center justify-between`}
         >
-          <ul className="flex flex-col md:flex-row items-center gap-3 uppercase text-sm text-gray-700 font-medium">
-            <li className="nav-item mb-2 md:mb-0">
+          <ul className="uppercase text-sm text-gray-700 font-medium flex flex-col mt-4 md:mt-0 md:flex-row md:items-center gap-3">
+            <li className="nav-item">
               <Link
                 to="/"
-                className={`nav-link py-2 px-3 ${(location.pathname === "/") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}
+                className={`nav-link block py-2 px-3 ${(location.pathname === "/") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}
               >
                 Home
               </Link>
             </li>
-            <li className="nav-item mb-2 md:mb-0">
-              <Link to="/about" className={`nav-link py-2 px-3 ${(location.pathname === "/about") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}>
+            <li className="nav-item">
+              <Link to="/about" className={`nav-link block py-2 px-3 ${(location.pathname === "/about") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}>
                 About
               </Link>
             </li>
-            <li className="nav-item mb-2 md:mb-0">
-              <Link to="/contact" className={`nav-link py-2 px-3 ${(location.pathname === "/contact") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}>
+            <li className="nav-item">
+              <Link to="/contact" className={`nav-link block py-2 px-3 ${(location.pathname === "/contact") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}>
                 Contact
               </Link>
             </li>
-            <li className="nav-item mb-2 md:mb-0">
+            <li className="nav-item">
               <Link
                 to="/login"
-                className={`nav-link py-2 px-3 ${(location.pathname === "/login") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}
+                className={`nav-link block py-2 px-3 block md:inline-flex ${(location.pathname === "/login") ? "text-primary hover:text-primary-700" : "hover:text-primary"}`}
               >
                 Login
               </Link>
             </li>
-            <li className="nav-item mb-2 md:mb-0">
+            <li className="nav-item">
               <Link
                 to="/register"
-                className="nav-link-btn bg-primary uppercase text-sm text-white rounded hover:bg-primary-700 py-2 px-3 transition"
+                className="nav-link nav-link-btn block bg-primary uppercase text-sm text-white rounded hover:bg-primary-700 py-2 px-3 text-center transition"
               >
                 Reserve a spot
               </Link>

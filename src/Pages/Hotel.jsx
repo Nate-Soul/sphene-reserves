@@ -102,20 +102,22 @@ const Hotel = () => {
         <Footer/>
         {openModal && (
           <div className="gallery-modal block fixed left-0 top-0 w-full h-full bg-black bg-opacity-60 z-lg overflow-auto">
-            <FaArrowAltCircleLeft 
-              className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute top-1/2 left-6 cursor-pointer"
-              onClick={() => handleSlides("l")}
-            />
-            <FaArrowAltCircleRight 
-              className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute top-1/2 right-6 cursor-pointer"
-              onClick={()=>handleSlides("r")}
-            />
-            <FaTimesCircle 
-              className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute top-6 right-14 cursor-pointer" 
-              onClick={()=>setOpenModal(false)}
-            />
             <figure className="gallery-modal-inner absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 border-4 border-primary rounded">
               <img src={photos[slideNumber].src} alt="..." className="w-auto h-auto -z-lg"/>
+              <figcaption>
+                <FaArrowAltCircleLeft 
+                  className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute top-1/2 -left-6 cursor-pointer sm:-left-10"
+                  onClick={() => handleSlides("l")}
+                />
+                <FaArrowAltCircleRight 
+                  className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute top-1/2 -right-6 cursor-pointer sm:-right-10"
+                  onClick={()=>handleSlides("r")}
+                />
+                <FaTimesCircle 
+                  className="text-white hover:text-primary-200 text-lg sm:text-2xl md:text-3xl z-xl absolute -top-6 right-0 cursor-pointer sm:-top-10" 
+                  onClick={()=>setOpenModal(false)}
+                />
+              </figcaption>
             </figure>
           </div>
         )}
